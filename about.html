@@ -56,7 +56,67 @@ z-index:-1;
 }
 .glow1{background:#7ddcff;top:-120px;left:-120px;}
 .glow2{background:#9f7dff;bottom:-140px;right:-140px;}
+/* ===== MOBILE ADAPTATIONS (Screens under 768px) ===== */
+@media (max-width: 768px) {
+  header {
+    padding: 15px 20px;
+    flex-direction: column; /* Stacks logo over nav */
+    gap: 10px;
+    background: rgba(0, 0, 0, 0.8); /* Darker background for better legibility */
+  }
 
+  .logo {
+    font-size: 1.3rem;
+  }
+
+  nav a {
+    margin: 0 10px;
+    font-size: 0.9rem;
+  }
+
+  .hero {
+    padding-top: 140px; /* Gives space for the stacked header */
+  }
+
+  .hero h1 {
+    font-size: 2.2rem; /* Smaller text for mobile screens */
+  }
+
+  .hero h2 {
+    font-size: 1.1rem;
+    padding: 0 10px;
+  }
+
+  /* Adjust the SVG to ensure it fills the space correctly */
+  #neural-bg svg {
+    width: 150%; /* Slightly wider to keep the "complexity" on small screens */
+    margin-left: -25%; /* Centers the enlarged SVG */
+  }
+
+  .blog-post {
+    padding: 25px; /* Less padding gives more room for text */
+    border-radius: 16px;
+  }
+
+  .blog-post h2 {
+    font-size: 1.5rem;
+  }
+
+  .blog-post p {
+    font-size: 1rem;
+  }
+}
+
+/* ===== EXTRA SMALL DEVICES (Phones) ===== */
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+  
+  .container {
+    padding: 40px 15px;
+  }
+}
 </style>
 </head>
 
