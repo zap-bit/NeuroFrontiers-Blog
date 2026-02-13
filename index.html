@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -130,37 +131,53 @@ nav a {
   box-shadow: 0 0 12px rgba(125,220,255,0.5);
   transform: translateY(-2px);
 }
-
-/* ===== CONTENT ===== */
+/* ===== IMPROVED CONTENT LAYOUT ===== */
 .container {
-  max-width: 1000px;
+  max-width: 900px; /* Slightly tighter for better readability */
   margin: 0 auto;
-  padding: 80px 20px;
-  position: relative;
-  z-index: 2;
-}
-.section-label {
-  margin-bottom: 40px;
-  text-align: left;
+  padding: 60px 20px;
 }
 
 .section-label h2 {
-  font-size: 1.8rem;
+  font-size: 1.2rem;
   color: #7ddcff;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
   text-transform: uppercase;
-  opacity: 0.9;
-  margin-bottom: 10px;
-  border-bottom: 1px solid rgba(125,220,255,0.3);
-  padding-bottom: 8px;
+  opacity: 0.7;
+  margin-bottom: 30px;
+  border-bottom: 1px solid rgba(125,220,255,0.2);
+  padding-bottom: 12px;
 }
 
 .blog-post {
-  background: rgba(255,255,255,0.05);
-  border-radius: 18px;
-  padding: 28px;
-  margin-bottom: 30px;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px); /* The "Glass" effect */
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  padding: 40px;
+  margin-bottom: 40px;
+  transition: transform 0.3s ease, border 0.3s ease;
 }
+
+.blog-post:hover {
+  transform: translateY(-5px);
+  border-color: rgba(125, 220, 255, 0.4);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.blog-post h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color: #ffffff;
+}
+
+.blog-post p {
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1.1rem;
+}
+
 </style>
 </head>
 
@@ -244,11 +261,12 @@ nav a {
 
 </section>
 
-<div class="section-label">
-  <h2>Articles</h2>
-</div>
   
 <div class="container">
+  
+  <div class="section-label">
+     <h2>Articles</h2>
+  </div>
   <div class="blog-post">
     <h2>Quantum AI Meets Cognitive Neuroscience</h2>
     <p>Our brains make rapid, life-saving decisions in milliseconds, despite constant uncertainty. Neurons fire probabilistically, influenced by a chaotic mix of intrinsic randomness and shifting connection strengths. To a classical computer engineer, this looks like a nightmare of noise and error. But to a neuroscientist, this "noise" is the engine of intelligence.</p>
