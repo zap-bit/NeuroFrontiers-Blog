@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Quantum AI Meets Cognitive Neuroscience</title>
+
+<style>
+
+/* ===== RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, F.sans-serif;  background: #0f0c29;
+  color: white;
+  line-height: 1.8;
+  overflow-x: hidden;
+}
+
+/* ===== HEADER ===== */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 18px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0,0,0,0.65);
+  backdrop-filter: blur(8px);
+  z-index: 10;
+}
+
+.logo {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: white;
+}
+
+nav a {
+  color: white;
+  margin-left: 24px;
+  text-decoration: none;
+  opacity: 0.85;
+}
+
+nav a:hover {
+  opacity: 1;
+}
+
+/* ===== ARTICLE LAYOUT ===== */
+.article-container {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 150px 22px 80px;
+}
+
+.article-container h1 {
+  font-size: 2.7rem;
+  color: #7ddcff;
+  margin-bottom: 14px;
+  text-shadow: 0 0 10px rgba(125,220,255,0.35);
+}
+
+.meta {
+  opacity: 0.6;
+  margin-bottom: 50px;
+  font-size: 0.95rem;
+}
+
+.article-container p {
+  margin-bottom: 26px;
+  font-size: 1.05rem;
+  opacity: 0.95;
+}
+
+/* Section headings */
+.article-container h2 {
+  margin: 50px 0 18px;
+  color: #7ddcff;
+  font-size: 1.5rem;
+}
+
+/* Lists */
+ul {
+  margin: 20px 0 30px 22px;
+}
+
+li {
+  margin-bottom: 12px;
+}
+
+/* ===== GLOW BACKGROUND ===== */
+.glow {
+  position: fixed;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  filter: blur(140px);
+  opacity: 0.22;
+  z-index: -1;
+}
+
+.glow1 {
+  background: #7ddcff;
+  top: -120px;
+  left: -120px;
+}
+
+.glow2 {
+  background: #9f7dff;
+  bottom: -140px;
+  right: -140px;
+}
+
+/* ===== BACK BUTTON ===== */
+.back {
+  display: inline-block;
+  margin-top: 50px;
+  padding: 12px 20px;
+  border-radius: 12px;
+  text-decoration: none;
+  color: #7ddcff;
+  border: 1px solid rgba(125,220,255,0.6);
+  background: rgba(125,220,255,0.08);
+  transition: 0.25s ease;
+  font-weight: 500;
+}
+
+.back:hover {
+  background: rgba(125,220,255,0.22);
+  box-shadow: 0 0 14px rgba(125,220,255,0.5);
+  transform: translateY(-2px);
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- Glow effects -->
+<div class="glow glow1"></div>
+<div class="glow glow2"></div>
+
+<header>
+  <div class="logo">NeuroFrontiers</div>
+  <nav>
+    <a href="BlogIndexV3.html">Home</a>
+  </nav>
+</header>
+
+<div class="article-container">
+
+<h1>Quantum AI Meets Cognitive Neuroscience</h1>
+
+<div class="meta">
+By Disha Shetty • January 30 2026 • 5–7 min read
+</div>
+
+<p>
+Our brains make rapid, life-saving decisions in milliseconds, despite constant uncertainty. Neurons fire probabilistically, influenced by a chaotic mix of intrinsic randomness and shifting connection strengths. To a classical computer engineer, this looks like a nightmare of noise and error. But to a neuroscientist, this "noise" is the engine of intelligence.
+</p>
+
+<p>
+Interestingly, quantum computing behaves in a way that mirrors this probabilistic, multi-path processing, perhaps in the very aspect of our cognition we understand the least. Could understanding one system inspire insights for the other?
+</p>
+
+<p>
+<strong>Is chaos the key to Quantum AI’s true potential?</strong>
+</p>
+
+<h2>Probabilistic Neurocomputation</h2>
+
+<p>
+Neural computations, much like modern machine learning, are probabilistic rather than deterministic. Individual neurons integrate inputs over multiple timescales (from milliseconds to minutes) allowing the brain to combine fast sensory signals with longer-term context and memory. 
+</p>
+
+<p>
+In AI, we attempt to achieve something similar through context injection or memory mechanisms, a feeble attempt at replicating nature. Large context windows increase computational costs and most memory mechanisms retain noise.
+</p>
+
+<p>
+Neurons communicate primarily through synapses. Chemical synapses release neurotransmitters that excite or inhibit downstream neurons, while electrical synapses allow ions to flow directly between cells, modulating signal strength much like the weights in hidden layers of a neural network. However, the dynamic adaptability of brain is much harder to replicate bringing the classic debate of exploration vs exploitation.
+</p>
+
+<h2>Modular vs Distributed Intelligence</h2>
+
+<p>
+The brain is a carefully balanced architecture composing two styles:
+</p>
+
+<ul>
+<li><strong>Modular:</strong> Dense local clusters enable specialized processing (e.g., vision).</li>
+<li><strong>Distributed:</strong> Long-range connections integrate information across regions and support memory formation.</li>
+</ul>
+
+<p>
+These patterns shape network dynamics and emergent behavior: dense local clusters produce synchronized activity and rapid local computation, whereas distributed pathways enable global coordination across the brain. Combined with synaptic plasticity-the brain’s ability to strengthen or weaken connections- the brain can dynamically adapt its network, allowing the same neurons to perform different computations depending on experience or context.
+</p>
+
+<p>This brings us to our big question.</p>
+<h2> How do we replicate it? </h2>
+
+<p>
+To accurately simulate the brain with current hardware like Aurora and Frontier it requires roughly between 20 to 40 
+ <a href="https://top500.org/lists/top500/2024/06/" target="_blank">Megatwatts</a> which is enough to power a small town! The brain on the other hand performs these massive parallel computations on just 20 watts, roughly enough to power a dim lightbulb.
+</p>
+
+<p>
+So how is this possible? The brain doesn’t fight noise, it uses it. It doesn’t waste energy trying to be perfectly deterministic but embraces uncertainty all the while maintaining functionality. 
+</p>
+
+<p>
+ Our brain doesn't calculate every path, it collapses the search space through controlled chaos. If intelligence emerges from structured uncertainty rather than rigid precision, the future of AI may not lie in removing noise, but in learning how to compute with it.</p>
+
+<a class="back" href="BlogIndexV3.html">← Back to Home</a>
+
+</div>
+
+</body>
+</html>
