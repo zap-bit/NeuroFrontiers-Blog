@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AI Meets Cognitive Neuroscience</title>
+
+<style>
+
+/* ===== RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, F.sans-serif;  background: #0f0c29;
+  color: white;
+  line-height: 1.8;
+  overflow-x: hidden;
+}
+
+/* ===== HEADER ===== */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 18px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0,0,0,0.65);
+  backdrop-filter: blur(8px);
+  z-index: 10;
+}
+
+.logo {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: white;
+}
+
+nav a {
+  color: white;
+  margin-left: 24px;
+  text-decoration: none;
+  opacity: 0.85;
+}
+
+nav a:hover {
+  opacity: 1;
+}
+
+/* ===== ARTICLE LAYOUT ===== */
+.article-container {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 150px 22px 80px;
+}
+
+.article-container h1 {
+  font-size: 2.7rem;
+  color: #7ddcff;
+  margin-bottom: 14px;
+  text-shadow: 0 0 10px rgba(125,220,255,0.35);
+}
+
+.meta {
+  opacity: 0.6;
+  margin-bottom: 50px;
+  font-size: 0.95rem;
+}
+
+.article-container p {
+  margin-bottom: 26px;
+  font-size: 1.05rem;
+  opacity: 0.95;
+}
+
+/* Section headings */
+.article-container h2 {
+  margin: 50px 0 18px;
+  color: #7ddcff;
+  font-size: 1.5rem;
+}
+
+/* Lists */
+ul {
+  margin: 20px 0 30px 22px;
+}
+
+li {
+  margin-bottom: 12px;
+}
+
+/* ===== GLOW BACKGROUND ===== */
+.glow {
+  position: fixed;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  filter: blur(140px);
+  opacity: 0.22;
+  z-index: -1;
+}
+
+.glow1 {
+  background: #7ddcff;
+  top: -120px;
+  left: -120px;
+}
+
+.glow2 {
+  background: #9f7dff;
+  bottom: -140px;
+  right: -140px;
+}
+
+/* ===== BACK BUTTON ===== */
+.back {
+  display: inline-block;
+  margin-top: 50px;
+  padding: 12px 20px;
+  border-radius: 12px;
+  text-decoration: none;
+  color: #7ddcff;
+  border: 1px solid rgba(125,220,255,0.6);
+  background: rgba(125,220,255,0.08);
+  transition: 0.25s ease;
+  font-weight: 500;
+}
+
+.back:hover {
+  background: rgba(125,220,255,0.22);
+  box-shadow: 0 0 14px rgba(125,220,255,0.5);
+  transform: translateY(-2px);
+}
+/* ===== MOBILE ADAPTATIONS (Screens under 768px) ===== */
+@media (max-width: 768px) {
+  header {
+    padding: 15px 20px;
+    flex-direction: column; /* Stacks logo over nav */
+    gap: 10px;
+    background: rgba(0, 0, 0, 0.8); /* Darker background for better legibility */
+  }
+
+  .logo {
+    font-size: 1.3rem;
+  }
+
+  nav a {
+    margin: 0 10px;
+    font-size: 0.9rem;
+  }
+
+  .hero {
+    padding-top: 140px; /* Gives space for the stacked header */
+  }
+
+  .hero h1 {
+    font-size: 2.2rem; /* Smaller text for mobile screens */
+  }
+
+  .hero h2 {
+    font-size: 1.1rem;
+    padding: 0 10px;
+  }
+
+  /* Adjust the SVG to ensure it fills the space correctly */
+  #neural-bg svg {
+    width: 150%; /* Slightly wider to keep the "complexity" on small screens */
+    margin-left: -25%; /* Centers the enlarged SVG */
+  }
+
+  .blog-post {
+    padding: 25px; /* Less padding gives more room for text */
+    border-radius: 16px;
+  }
+
+  .blog-post h2 {
+    font-size: 1.5rem;
+  }
+
+  .blog-post p {
+    font-size: 1rem;
+  }
+}
+
+/* ===== EXTRA SMALL DEVICES (Phones) ===== */
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+  
+  .container {
+    padding: 40px 15px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- Glow effects -->
+<div class="glow glow1"></div>
+<div class="glow glow2"></div>
+
+<header>
+  <div class="logo">NeuroFrontiers</div>
+  <nav>
+    <a href="index.html">Home</a>
+  </nav>
+</header>
+
+<div class="article-container">
+
+    <h1>The Brain Feeds on the Uncertainty AI Was Designed to Remove</h1>
+    <p>Let's say you're playing chess. You wouldn't calculate every possible move; a queen advantage, weak king side, a trap two moves away, a game of probability and intuitively chosen heuristics. The calculation comes later, if at all.</p>
+    <p>The heuristic isn't a shortcut. It's the primary mode of intelligence.</p>
+    <p>Current AI treats it as a fallback.</p>
+    <p>Minimax calculates exhaustively until it can't, then approximates. We built the system around exhaustive search and resorted to heuristics when compute ran out. The brain works the other way around, heuristics first, deep processing only when something is worth it.</p>
+    <p>What if this inversion explains the gap we keep marveling at? Supercomputer scale processing. One light bulb's worth of power.</p>
+    <p>But it goes deeper than architecture.</p>
+    <p>When a baby enters the world it doesn't get a curated dataset. It gets everything all at once, light, sound, sensation, hunger, chaos. There's no dropout parameter. No regularization schedule. Just pressure to make sense of the world or fail to function. So the brain adapts. Not because someone designed it to. Because it had no choice. The filtering emerges from necessity. The robustness is a scar from surviving sensory overload. Makes sense why babies cry so much, it's like being wrapped in a prickly blanket where you can feel each cell.</p>
+    <p>Now look at how we build AI.</p>
+    <p>Clean data. Pre-engineered regularization. Heuristic rules decided before the system encounters the problem. We hand it the solutions before it faces the demand that would have produced them naturally.</p>
+    <p>This is the gap. And it's not about scale.</p>
+    <p>Classical AI systems, even probabilistic ones, still evaluate uncertainty deterministically. They compute distributions, minimize error, correct deviations. Uncertainty is something to be measured and managed. In the brain uncertainty isn't managed. It's the medium the computation runs in. Determinism is born from uncertainty.</p>
+  </div>
+</body>
+</html>
