@@ -3,9 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>AI Meets Cognitive Neuroscience</title>
-
 <style>
 
 /* ===== RESET ===== */
@@ -16,7 +14,8 @@
 }
 
 body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, F.sans-serif;  background: #0f0c29;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background: #0f0c29;
   color: white;
   line-height: 1.8;
   overflow-x: hidden;
@@ -49,9 +48,7 @@ nav a {
   opacity: 0.85;
 }
 
-nav a:hover {
-  opacity: 1;
-}
+nav a:hover { opacity: 1; }
 
 /* ===== ARTICLE LAYOUT ===== */
 .article-container {
@@ -79,21 +76,17 @@ nav a:hover {
   opacity: 0.95;
 }
 
-/* Section headings */
 .article-container h2 {
   margin: 50px 0 18px;
   color: #7ddcff;
   font-size: 1.5rem;
 }
 
-/* Lists */
 ul {
   margin: 20px 0 30px 22px;
 }
 
-li {
-  margin-bottom: 12px;
-}
+li { margin-bottom: 12px; }
 
 /* ===== GLOW BACKGROUND ===== */
 .glow {
@@ -106,17 +99,8 @@ li {
   z-index: -1;
 }
 
-.glow1 {
-  background: #7ddcff;
-  top: -120px;
-  left: -120px;
-}
-
-.glow2 {
-  background: #9f7dff;
-  bottom: -140px;
-  right: -140px;
-}
+.glow1 { background: #7ddcff; top: -120px; left: -120px; }
+.glow2 { background: #9f7dff; bottom: -140px; right: -140px; }
 
 /* ===== BACK BUTTON ===== */
 .back {
@@ -137,73 +121,94 @@ li {
   box-shadow: 0 0 14px rgba(125,220,255,0.5);
   transform: translateY(-2px);
 }
-/* ===== MOBILE ADAPTATIONS (Screens under 768px) ===== */
+
+/* ===== ANIMATION BLOCK ===== */
+.animation-block {
+  margin: 50px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+#stage {
+  position: relative;
+  width: min(500px, 100%);
+  aspect-ratio: 1;
+  border-radius: 14px;
+  overflow: hidden;
+  cursor: pointer;
+  border: 1px solid rgba(125,220,255,0.12);
+}
+
+#stage canvas {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.anim-caption {
+  font-size: 0.85rem;
+  opacity: 0.45;
+  text-align: center;
+  font-style: italic;
+  max-width: 420px;
+}
+
+.anim-controls {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.anim-btn {
+  padding: 8px 22px;
+  background: transparent;
+  border: 1px solid rgba(125,220,255,0.35);
+  color: #7ddcff;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.25s ease;
+  font-family: inherit;
+}
+
+.anim-btn:hover {
+  background: rgba(125,220,255,0.1);
+  border-color: #7ddcff;
+}
+
+.anim-hint {
+  font-size: 10px;
+  opacity: 0.25;
+  letter-spacing: 0.08em;
+}
+
+/* ===== MOBILE ===== */
 @media (max-width: 768px) {
   header {
     padding: 15px 20px;
-    flex-direction: column; /* Stacks logo over nav */
+    flex-direction: column;
     gap: 10px;
-    background: rgba(0, 0, 0, 0.8); /* Darker background for better legibility */
+    background: rgba(0,0,0,0.8);
   }
-
-  .logo {
-    font-size: 1.3rem;
-  }
-
-  nav a {
-    margin: 0 10px;
-    font-size: 0.9rem;
-  }
-
-  .hero {
-    padding-top: 140px; /* Gives space for the stacked header */
-  }
-
-  .hero h1 {
-    font-size: 2.2rem; /* Smaller text for mobile screens */
-  }
-
-  .hero h2 {
-    font-size: 1.1rem;
-    padding: 0 10px;
-  }
-
-  /* Adjust the SVG to ensure it fills the space correctly */
-  #neural-bg svg {
-    width: 150%; /* Slightly wider to keep the "complexity" on small screens */
-    margin-left: -25%; /* Centers the enlarged SVG */
-  }
-
-  .blog-post {
-    padding: 25px; /* Less padding gives more room for text */
-    border-radius: 16px;
-  }
-
-  .blog-post h2 {
-    font-size: 1.5rem;
-  }
-
-  .blog-post p {
-    font-size: 1rem;
-  }
+  .logo { font-size: 1.3rem; }
+  nav a { margin: 0 10px; font-size: 0.9rem; }
+  .article-container { padding-top: 140px; }
+  .article-container h1 { font-size: 2rem; }
 }
 
-/* ===== EXTRA SMALL DEVICES (Phones) ===== */
 @media (max-width: 480px) {
-  .hero h1 {
-    font-size: 1.8rem;
-  }
-  
-  .container {
-    padding: 40px 15px;
-  }
+  .article-container h1 { font-size: 1.7rem; }
 }
 </style>
 </head>
 
 <body>
 
-<!-- Glow effects -->
 <div class="glow glow1"></div>
 <div class="glow glow2"></div>
 
@@ -216,20 +221,249 @@ li {
 
 <div class="article-container">
 
-    <h1>The Brain Feeds on the Uncertainty AI Was Designed to Remove</h1>
-    <p>Let's say you're playing chess. You wouldn't calculate every possible move; a queen advantage, weak king side, a trap two moves away, a game of probability and intuitively chosen heuristics. The calculation comes later, if at all.</p>
-    <p>The heuristic isn't a shortcut. It's the primary mode of intelligence.</p>
-    <p>Current AI treats it as a fallback.</p>
-    <p>Minimax calculates exhaustively until it can't, then approximates. We built the system around exhaustive search and resorted to heuristics when compute ran out. The brain works the other way around, heuristics first, deep processing only when something is worth it.</p>
-    <p>What if this inversion explains the gap we keep marveling at? Supercomputer scale processing. One light bulb's worth of power.</p>
-    <p>Modern AI has moved beyond exhaustive search. Neural networks and diffusion models are closer to intuition than minimax ever was. But underneath, the basic computational unit is still deterministic: weighted inputs passed through an activation function, updated by gradient descent. Randomness is introduced through training procedures or sampling methods—dropout, temperature, noise injection.
+  <h1>The Brain Feeds on the Uncertainty AI Was Designed to Remove</h1>
+  <p class="meta">NeuroFrontiers · March 2026 · 5 min read</p>
 
-Biological neurons appear to be different. Their behavior emerges from electrochemical processes that are probabilistic at the physical level: neurotransmitter release, ion channel fluctuations, and noisy firing dynamics. In artificial systems, stochasticity is added to a deterministic core. In the brain, stochasticity may be part of the substrate from which stable behavior emerges.</p>
-    <p>When a baby enters the world it doesn't get a curated dataset. It gets everything all at once, light, sound, sensation, hunger, chaos. There's no dropout parameter. No regularization schedule. Just pressure to make sense of the world or fail to function. So the brain adapts. Not because someone designed it to. Because it had no choice. The filtering emerges from necessity. The robustness is a scar from surviving sensory overload. Makes sense why babies cry so much, it's like being wrapped in a prickly blanket where you can feel each cell.</p>
-    <p>Now look at how we build AI.</p>
-    <p>Clean data. Pre-engineered regularization. Heuristic rules decided before the system encounters the problem. We hand it the solutions before it faces the demand that would have produced them naturally.</p>
-    <p>This is the gap. And it's not about scale.</p>
-    <p>Classical AI systems, even probabilistic ones, still evaluate uncertainty deterministically. They compute distributions, minimize error, correct deviations. Uncertainty is something to be measured and managed. In the brain uncertainty isn't managed. It's the medium the computation runs in. Determinism is born from uncertainty.</p>
+  <p>Let's say you're playing chess. You wouldn't calculate every possible move; a queen advantage, weak king side, a trap two moves away, a game of probability and intuitively chosen heuristics. The calculation comes later, if at all.</p>
+
+  <p>The heuristic isn't a shortcut. It's the primary mode of intelligence.</p>
+
+  <p>Current AI treats it as a fallback.</p>
+
+  <p>Minimax calculates exhaustively until it can't, then approximates. We built the system around exhaustive search and resorted to heuristics when compute ran out. The brain works the other way around, heuristics first, deep processing only when something is worth it.</p>
+
+  <p>What if this inversion explains the gap we keep marveling at? Supercomputer scale processing. One light bulb's worth of power.</p>
+
+  <p>Modern AI has moved beyond exhaustive search. Neural networks and diffusion models are closer to intuition than minimax ever was. But underneath, the basic computational unit is still deterministic: weighted inputs passed through an activation function, updated by gradient descent. Randomness is introduced through training procedures or sampling methods — dropout, temperature, noise injection.</p>
+
+  <p>Biological neurons appear to be different. Their behavior emerges from electrochemical processes that are probabilistic at the physical level: neurotransmitter release, ion channel fluctuations, and noisy firing dynamics. In artificial systems, stochasticity is added to a deterministic core. In the brain, stochasticity may be part of the substrate from which stable behavior emerges.</p>
+
+  <!-- ANIMATION -->
+  <div class="animation-block">
+    <div id="stage">
+      <canvas id="c"></canvas>
+    </div>
+    <p class="anim-caption">Forming Signals from Noise</p>
+    <div class="anim-controls">
+      <button class="anim-btn" id="replay">Replay</button>
+      <span class="anim-hint">click animation to skip ahead</span>
+    </div>
   </div>
+
+  <p>When a baby enters the world it doesn't get a curated dataset. It gets everything all at once — light, sound, sensation, hunger, chaos. There's no dropout parameter. No regularization schedule. Just pressure to make sense of the world or fail to function. So the brain adapts. Not because someone designed it to. Because it had no choice. The filtering emerges from necessity. The robustness is a scar from surviving sensory overload. Makes sense why babies cry so much — it's like being wrapped in a prickly blanket where you can feel each cell.</p>
+
+  <p>Now look at how we build AI.</p>
+
+  <p>Clean data. Pre-engineered regularization. Heuristic rules decided before the system encounters the problem. We hand it the solutions before it faces the demand that would have produced them naturally.</p>
+
+  <p>This is the gap. And it's not about scale.</p>
+
+  <p>Classical AI systems, even probabilistic ones, still evaluate uncertainty deterministically. They compute distributions, minimize error, correct deviations. Uncertainty is something to be measured and managed. In the brain uncertainty isn't managed. It's the medium the computation runs in. Determinism is born from uncertainty.</p>
+
+  <p>Using classical computing to replicate the brain is like sculpting a 3D structure on 2D paper. You can make it look hyperrealistic. You can close the gap. You can even fool nearby observers. But the depth doesn't translate.</p>
+
+  <p>We're not missing more compute or better training data. We're missing the right foundation.</p>
+
+  <p>We've been adding chaos to deterministic systems and calling it intelligence. The brain built determinism from chaos — and that's what it truly means to be intelligent.</p>
+
+  <a class="back" href="index.html">← Back to Home</a>
+
+</div>
+
+<script>
+const canvas = document.getElementById('c');
+const ctx = canvas.getContext('2d');
+const SIZE = 500;
+canvas.width = SIZE;
+canvas.height = SIZE;
+
+function rand(a,b){ return a+Math.random()*(b-a); }
+function randInt(a,b){ return Math.floor(rand(a,b)); }
+function lerp(a,b,t){ return a+(b-a)*t; }
+function clamp(v,a,b){ return Math.max(a,Math.min(b,v)); }
+function easeOut(t){ return 1-Math.pow(1-t,3); }
+function easeInOut(t){ return t<0.5?2*t*t:1-Math.pow(-2*t+2,2)/2; }
+
+const nodeTargets = [];
+nodeTargets.push({x:SIZE/2, y:SIZE/2, r:9, ring:0, hue:140});
+for(let ring=1;ring<=4;ring++){
+  let count = ring*5;
+  for(let i=0;i<count;i++){
+    let angle = (i/count)*Math.PI*2 + ring*0.35;
+    let radius = ring*56;
+    nodeTargets.push({
+      x: SIZE/2 + Math.cos(angle)*radius,
+      y: SIZE/2 + Math.sin(angle)*radius,
+      r: Math.max(2.5, 5.5-ring*0.7),
+      ring,
+      hue: 100 + ring*15
+    });
+  }
+}
+
+const connections = [];
+for(let i=0;i<nodeTargets.length;i++){
+  for(let j=i+1;j<nodeTargets.length;j++){
+    let d = Math.hypot(nodeTargets[i].x-nodeTargets[j].x, nodeTargets[i].y-nodeTargets[j].y);
+    if(d < 88 && Math.abs(nodeTargets[i].ring-nodeTargets[j].ring)<=1){
+      connections.push({i, j, phase: rand(0,Math.PI*2)});
+    }
+  }
+}
+
+const extraParticles = 80;
+
+class Particle {
+  constructor(targetIdx, isLoose){
+    this.targetIdx = targetIdx;
+    this.isLoose = isLoose;
+    this.reset();
+    this.phase = rand(0, Math.PI*2);
+  }
+  reset(){
+    this.x = rand(30, SIZE-30);
+    this.y = rand(30, SIZE-30);
+    this.vx = rand(-2.5, 2.5);
+    this.vy = rand(-2.5, 2.5);
+    this.hue = randInt(0, 360);
+    this.r = rand(1.5, 4);
+    this.life = rand(0.6, 1);
+    this.decay = rand(0.005, 0.018);
+  }
+  update(order){
+    if(this.isLoose){
+      this.x += this.vx * (1 - order*0.7);
+      this.y += this.vy * (1 - order*0.7);
+      this.life -= this.decay + order*0.01;
+      if(this.life <= 0) this.reset();
+      return;
+    }
+    let target = nodeTargets[this.targetIdx];
+    if(order < 0.05){
+      this.x += this.vx; this.y += this.vy;
+      this.life -= this.decay;
+      if(this.life <= 0) this.reset();
+    } else {
+      let attraction = easeOut(clamp(order * 1.3, 0, 1));
+      let jitter = (1-order) * rand(-1,1) * 3;
+      this.vx = lerp(this.vx, (target.x - this.x) * 0.06, attraction * 0.15);
+      this.vy = lerp(this.vy, (target.y - this.y) * 0.06, attraction * 0.15);
+      this.x += this.vx + jitter;
+      this.y += this.vy + jitter;
+      let dist = Math.hypot(this.x-target.x, this.y-target.y);
+      if(dist > 5 || order < 0.8){
+        this.life -= this.decay * (1 - order * 0.85);
+        if(this.life <= 0){
+          this.x = target.x + rand(-60,60)*(1-order) + rand(-5,5);
+          this.y = target.y + rand(-60,60)*(1-order) + rand(-5,5);
+          this.vx = rand(-2,2); this.vy = rand(-2,2);
+          this.life = rand(0.6,1);
+        }
+      } else {
+        this.life = lerp(this.life, 0.9, 0.05);
+      }
+    }
+  }
+  draw(order){
+    let target = this.isLoose ? null : nodeTargets[this.targetIdx];
+    let a = this.life * 0.85;
+    if(a <= 0.01) return;
+    let s = lerp(80, 70, order);
+    let l = lerp(65, 72, order);
+    ctx.globalAlpha = a;
+    ctx.fillStyle = `hsl(${this.hue},${s}%,${l}%)`;
+    let drawR = this.r;
+    if(!this.isLoose && order > 0.4 && target){
+      let dist = Math.hypot(this.x - target.x, this.y - target.y);
+      let closeness = clamp(1 - dist/40, 0, 1);
+      drawR = lerp(this.r, target.r * 1.8, closeness * easeInOut(order));
+    }
+    ctx.beginPath();
+    ctx.arc(this.x, this.y, drawR, 0, Math.PI*2);
+    ctx.fill();
+    ctx.globalAlpha = 1;
+  }
+}
+
+const particles = [];
+for(let i=0;i<nodeTargets.length;i++) particles.push(new Particle(i, false));
+for(let i=0;i<extraParticles;i++) particles.push(new Particle(0, true));
+
+let tick = 0, phase = 0, phaseStart = 0, globalOrder = 0;
+
+function drawConnections(order, t){
+  if(order < 0.3) return;
+  let connAlpha = easeOut(clamp((order-0.3)/0.5, 0, 1));
+  for(let c of connections){
+    let ni = nodeTargets[c.i], nj = nodeTargets[c.j];
+    let maxRing = Math.max(ni.ring, nj.ring);
+    let ringDelay = maxRing * 0.1;
+    let appear = clamp((order - 0.3 - ringDelay)/0.25, 0, 1);
+    if(appear <= 0) continue;
+    let flicker = 1;
+    if(order < 0.85){
+      let freq = 3 + maxRing * 2;
+      let raw = 0.3 + 0.7*(0.5+0.5*Math.sin(t*0.025*freq + c.phase));
+      flicker = lerp(raw, 1, easeInOut(clamp((order-0.3)/0.55, 0, 1)));
+    }
+    let pi = particles[c.i], pj = particles[c.j];
+    ctx.beginPath();
+    ctx.moveTo(pi.x, pi.y);
+    ctx.lineTo(pj.x, pj.y);
+    ctx.strokeStyle = `hsla(${pi.hue},65%,70%,${appear * flicker * 0.45 * connAlpha})`;
+    ctx.lineWidth = 1;
+    ctx.stroke();
+  }
+}
+
+function animate(){
+  tick++;
+  let elapsed = tick - phaseStart;
+  ctx.fillStyle = `rgba(15,12,41,${lerp(0.2, 0.13, globalOrder)})`;
+  ctx.fillRect(0,0,SIZE,SIZE);
+
+  if(phase===0){ globalOrder=0; if(elapsed>180){phase=1;phaseStart=tick;} }
+  else if(phase===1){ let t=clamp(elapsed/280,0,1); globalOrder=easeInOut(t)*0.5; if(elapsed>280){phase=2;phaseStart=tick;} }
+  else if(phase===2){ let t=clamp(elapsed/220,0,1); globalOrder=lerp(0.5,1,easeInOut(t)); if(elapsed>220){phase=3;phaseStart=tick;} }
+  else if(phase===3||phase===4){ globalOrder=1; }
+
+  for(let p of particles){ p.update(globalOrder); p.draw(globalOrder); }
+  drawConnections(globalOrder, tick);
+
+  if(globalOrder < 0.3){
+    let ci = 1 - globalOrder/0.3;
+    if(Math.random() < 0.3*ci){
+      ctx.beginPath();
+      ctx.moveTo(rand(0,SIZE),rand(0,SIZE));
+      ctx.lineTo(rand(0,SIZE),rand(0,SIZE));
+      ctx.strokeStyle=`hsla(${randInt(0,360)},70%,65%,${rand(0.04,0.18)*ci})`;
+      ctx.lineWidth=rand(0.5,2); ctx.stroke();
+    }
+  }
+
+  if(globalOrder > 0.85){
+    let eg = clamp((globalOrder-0.85)/0.15,0,1);
+    let g = ctx.createRadialGradient(SIZE/2,SIZE/2,0,SIZE/2,SIZE/2,85);
+    g.addColorStop(0,`rgba(255,255,255,${eg*0.1})`);
+    g.addColorStop(1,'rgba(255,255,255,0)');
+    ctx.beginPath(); ctx.arc(SIZE/2,SIZE/2,85,0,Math.PI*2);
+    ctx.fillStyle=g; ctx.fill();
+  }
+
+  requestAnimationFrame(animate);
+}
+
+requestAnimationFrame(animate);
+
+document.getElementById('stage').addEventListener('click', ()=>{
+  if(phase < 3){ phase=3; phaseStart=tick; globalOrder=1; }
+});
+
+document.getElementById('replay').addEventListener('click', ()=>{
+  tick=0; phase=0; phaseStart=0; globalOrder=0;
+  ctx.clearRect(0,0,SIZE,SIZE);
+  particles.forEach(p=>p.reset());
+});
+</script>
 </body>
 </html>
