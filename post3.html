@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Intelligence Isn't Trained. It's Formed Under Pressure.</title>
+<style>
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, F.sans-serif;
+  background: #0f0c29;
+  color: white;
+  line-height: 1.8;
+  overflow-x: hidden;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 18px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0,0,0,0.65);
+  backdrop-filter: blur(8px);
+  z-index: 10;
+}
+
+.logo {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: white;
+}
+
+nav a {
+  color: white;
+  margin-left: 24px;
+  text-decoration: none;
+  opacity: 0.85;
+}
+
+nav a:hover { opacity: 1; }
+
+.article-container {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 150px 22px 80px;
+}
+
+.article-container h1 {
+  font-size: 2.7rem;
+  color: #7ddcff;
+  margin-bottom: 14px;
+  text-shadow: 0 0 10px rgba(125,220,255,0.35);
+}
+
+.meta {
+  opacity: 0.6;
+  margin-bottom: 50px;
+  font-size: 0.95rem;
+}
+
+.article-container p {
+  margin-bottom: 26px;
+  font-size: 1.05rem;
+  opacity: 0.95;
+}
+
+.article-container h2 {
+  margin: 50px 0 18px;
+  color: #7ddcff;
+  font-size: 1.5rem;
+}
+
+.glow {
+  position: fixed;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  filter: blur(140px);
+  opacity: 0.22;
+  z-index: -1;
+}
+
+.glow1 { background: #7ddcff; top: -120px; left: -120px; }
+.glow2 { background: #9f7dff; bottom: -140px; right: -140px; }
+
+.back {
+  display: inline-block;
+  margin-top: 50px;
+  padding: 12px 20px;
+  border-radius: 12px;
+  text-decoration: none;
+  color: #7ddcff;
+  border: 1px solid rgba(125,220,255,0.6);
+  background: rgba(125,220,255,0.08);
+  transition: 0.25s ease;
+  font-weight: 500;
+}
+
+.back:hover {
+  background: rgba(125,220,255,0.22);
+  box-shadow: 0 0 14px rgba(125,220,255,0.5);
+  transform: translateY(-2px);
+}
+
+.diagram-block {
+  margin: 50px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.diagram-block svg {
+  width: 100%;
+  max-width: 720px;
+  border-radius: 14px;
+  border: 1px solid rgba(125,220,255,0.1);
+  background: rgba(255,255,255,0.02);
+}
+
+.diagram-caption {
+  font-size: 0.85rem;
+  opacity: 0.45;
+  text-align: center;
+  font-style: italic;
+  max-width: 560px;
+}
+
+.diagram-block svg text {
+  fill: rgba(255,255,255,0.85);
+  font-family: system-ui, sans-serif;
+}
+
+.diagram-block svg .label-dim {
+  fill: rgba(255,255,255,0.45);
+  font-size: 11px;
+}
+
+.diagram-block svg .label-head {
+  fill: #7ddcff;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.diagram-block svg .label-sub {
+  fill: rgba(255,255,255,0.55);
+  font-size: 11px;
+}
+
+@media (max-width: 768px) {
+  header {
+    padding: 15px 20px;
+    flex-direction: column;
+    gap: 10px;
+    background: rgba(0,0,0,0.8);
+  }
+  .logo { font-size: 1.3rem; }
+  nav a { margin: 0 10px; font-size: 0.9rem; }
+  .article-container { padding-top: 140px; }
+  .article-container h1 { font-size: 2rem; }
+}
+
+@media (max-width: 480px) {
+  .article-container h1 { font-size: 1.7rem; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="glow glow1"></div>
+<div class="glow glow2"></div>
+
+<header>
+  <div class="logo">NeuroFrontiers</div>
+  <nav>
+    <a href="index.html">Home</a>
+  </nav>
+</header>
+
+<div class="article-container">
+
+  <h1>Intelligence Isn't Trained. It's Formed Under Pressure.</h1>
+  <p class="meta">April 2026 · 6 min read</p>
+
+  <p>In 2025, researchers at Google DeepMind and HHMI Janelia Research Campus published a whole-body physics simulation of <em>Drosophila melanogaster</em> in <em>Nature</em>. The body of an animal influences how its nervous system generates behaviour. Accurately modelling neural control of sensorimotor behaviour requires an anatomically detailed biomechanical representation of the body. Using data-driven reinforcement learning trained on real fly movement data, the virtual fly can walk and fly just like the real thing, walking and flying across complex trajectories, using its eyes to control and steer its flight.</p>
+
+  <p>The framing matters here. This was not a system explicitly programmed with locomotion rules. The behavior emerged from the interaction of a neural controller, a physical body model, and environmental constraints. The body of an animal determines how the nervous system produces behavior.</p>
+
+  <div class="diagram-block">
+    <svg viewBox="0 0 680 440" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+          <path d="M2 1L8 5L2 9" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </marker>
+        <marker id="arr-rev" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+          <path d="M8 1L2 5L8 9" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </marker>
+      </defs>
+      <rect x="30" y="30" width="620" height="380" rx="20" fill="rgba(29,158,117,0.08)" stroke="rgba(29,158,117,0.35)" stroke-width="1"/>
+      <text x="340" y="58" text-anchor="middle" class="label-dim">Environment</text>
+      <rect x="90" y="82" width="500" height="290" rx="16" fill="rgba(127,119,221,0.1)" stroke="rgba(127,119,221,0.35)" stroke-width="1"/>
+      <text x="340" y="108" text-anchor="middle" class="label-dim">Body</text>
+      <rect x="160" y="136" width="360" height="196" rx="12" fill="rgba(239,159,39,0.1)" stroke="rgba(239,159,39,0.35)" stroke-width="1"/>
+      <text x="340" y="160" text-anchor="middle" class="label-dim">Nervous system (~140,000 neurons)</text>
+      <circle cx="230" cy="210" r="5" fill="#EF9F27" opacity="0.85"/>
+      <circle cx="258" cy="226" r="4" fill="#BA7517" opacity="0.8"/>
+      <circle cx="248" cy="196" r="3" fill="#EF9F27" opacity="0.65"/>
+      <circle cx="286" cy="212" r="5" fill="#BA7517" opacity="0.85"/>
+      <circle cx="312" cy="228" r="4" fill="#EF9F27" opacity="0.8"/>
+      <circle cx="335" cy="208" r="6" fill="#EF9F27" opacity="1"/>
+      <circle cx="362" cy="224" r="4" fill="#BA7517" opacity="0.9"/>
+      <circle cx="384" cy="206" r="5" fill="#EF9F27" opacity="0.8"/>
+      <circle cx="410" cy="222" r="3" fill="#BA7517" opacity="0.7"/>
+      <circle cx="426" cy="210" r="5" fill="#EF9F27" opacity="0.85"/>
+      <circle cx="272" cy="248" r="4" fill="#BA7517" opacity="0.7"/>
+      <circle cx="306" cy="258" r="3" fill="#EF9F27" opacity="0.6"/>
+      <circle cx="348" cy="254" r="5" fill="#BA7517" opacity="0.8"/>
+      <circle cx="390" cy="252" r="4" fill="#EF9F27" opacity="0.7"/>
+      <line x1="230" y1="210" x2="258" y2="226" stroke="#EF9F27" stroke-width="0.8" opacity="0.45"/>
+      <line x1="258" y1="226" x2="286" y2="212" stroke="#EF9F27" stroke-width="0.8" opacity="0.45"/>
+      <line x1="286" y1="212" x2="335" y2="208" stroke="#BA7517" stroke-width="1.2" opacity="0.65"/>
+      <line x1="335" y1="208" x2="362" y2="224" stroke="#BA7517" stroke-width="1.2" opacity="0.65"/>
+      <line x1="362" y1="224" x2="384" y2="206" stroke="#EF9F27" stroke-width="0.8" opacity="0.5"/>
+      <line x1="384" y1="206" x2="426" y2="210" stroke="#BA7517" stroke-width="1" opacity="0.55"/>
+      <line x1="312" y1="228" x2="348" y2="254" stroke="#EF9F27" stroke-width="0.8" opacity="0.4"/>
+      <line x1="348" y1="254" x2="390" y2="252" stroke="#EF9F27" stroke-width="0.8" opacity="0.4"/>
+      <line x1="335" y1="208" x2="306" y2="258" stroke="#EF9F27" stroke-width="1" opacity="0.45"/>
+      <text x="340" y="302" text-anchor="middle" class="label-head">Behavior emerges here</text>
+      <text x="340" y="320" text-anchor="middle" class="label-sub">from interaction, not instruction</text>
+      <line x1="160" y1="238" x2="102" y2="238" stroke="rgba(255,255,255,0.3)" stroke-width="1" marker-end="url(#arr)" marker-start="url(#arr-rev)"/>
+      <line x1="520" y1="238" x2="578" y2="238" stroke="rgba(255,255,255,0.3)" stroke-width="1" marker-end="url(#arr)" marker-start="url(#arr-rev)"/>
+      <line x1="122" y1="86" x2="66" y2="60" stroke="rgba(255,255,255,0.18)" stroke-width="1" marker-end="url(#arr)" marker-start="url(#arr-rev)"/>
+      <line x1="558" y1="86" x2="614" y2="60" stroke="rgba(255,255,255,0.18)" stroke-width="1" marker-end="url(#arr)" marker-start="url(#arr-rev)"/>
+    </svg>
+    <p class="diagram-caption">Behavior lives in the whole stack, not in the nervous system alone. Influence runs in every direction. FlyWire Consortium, <em>Nature</em> 2024 · Vaxenburg et al., <em>Nature</em> 2025</p>
+  </div>
+
+  <p>The scale is also worth pausing on. The <em>Drosophila</em> brain contains almost 140,000 neurons and over 15 million synaptic connections, confirmed by the FlyWire Consortium's complete connectome, published in <em>Nature</em> in 2024. The central nervous system, brain plus ventral nerve cord, contains about 160,000 neurons in total. The human brain operates at approximately 86 billion. And yet, at this comparatively modest scale, coherent and adaptive behavior emerges.</p>
+
+  <p>This is the core claim of embodied cognition: behavior is not inserted into a system. It arises from the system's interaction with its body, its environment, and its noise. The environment matters. The body matters. Constraint matters.</p>
+
+  <h2>The contrast</h2>
+
+  <p>This stands in contrast to how most modern AI systems are built. Contemporary architectures are trained on curated datasets, filtered, labeled, and pre-structured before the system encounters them. The model optimizes within a representational lens designed in advance. Biological intelligence, by contrast, forms under environmental pressure, shaped by necessity and feedback with a physical world rather than by prior curation.</p>
+
+  <div class="diagram-block">
+    <svg viewBox="0 0 680 360" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="arr2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+          <path d="M2 1L8 5L2 9" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </marker>
+      </defs>
+      <text x="170" y="30" text-anchor="middle" class="label-head">Biological intelligence</text>
+      <rect x="50" y="46" width="240" height="52" rx="8" fill="rgba(29,158,117,0.12)" stroke="rgba(29,158,117,0.4)" stroke-width="1"/>
+      <text x="170" y="68" text-anchor="middle" style="fill:#7ddcff;font-size:13px;font-weight:600">World</text>
+      <text x="170" y="86" text-anchor="middle" class="label-sub">Unfiltered, noisy, physical</text>
+      <line x1="170" y1="98" x2="170" y2="120" stroke="rgba(255,255,255,0.3)" stroke-width="1" marker-end="url(#arr2)"/>
+      <rect x="50" y="120" width="240" height="52" rx="8" fill="rgba(29,158,117,0.12)" stroke="rgba(29,158,117,0.4)" stroke-width="1"/>
+      <text x="170" y="142" text-anchor="middle" style="fill:#7ddcff;font-size:13px;font-weight:600">Constraint and pressure</text>
+      <text x="170" y="160" text-anchor="middle" class="label-sub">Body, gravity, scarcity, risk</text>
+      <line x1="170" y1="172" x2="170" y2="194" stroke="rgba(255,255,255,0.3)" stroke-width="1" marker-end="url(#arr2)"/>
+      <rect x="50" y="194" width="240" height="52" rx="8" fill="rgba(29,158,117,0.12)" stroke="rgba(29,158,117,0.4)" stroke-width="1"/>
+      <text x="170" y="216" text-anchor="middle" style="fill:#7ddcff;font-size:13px;font-weight:600">Adaptation under necessity</text>
+      <text x="170" y="234" text-anchor="middle" class="label-sub">Structure forms to survive</text>
+      <line x1="170" y1="246" x2="170" y2="268" stroke="rgba(255,255,255,0.3)" stroke-width="1" marker-end="url(#arr2)"/>
+      <rect x="50" y="268" width="240" height="60" rx="8" fill="rgba(29,158,117,0.2)" stroke="rgba(29,158,117,0.6)" stroke-width="1.2"/>
+      <text x="170" y="293" text-anchor="middle" style="fill:#7ddcff;font-size:13px;font-weight:600">Behavior emerges</text>
+      <text x="170" y="313" text-anchor="middle" class="label-sub">From structure, not rules</text>
+      <line x1="340" y1="20" x2="340" y2="345" stroke="rgba(255,255,255,0.1)" stroke-width="1" stroke-dasharray="4 4"/>
+      <text x="510" y="30" text-anchor="middle" class="label-head">Contemporary AI</text>
+      <rect x="390" y="46" width="240" height="52" rx="8" fill="rgba(136,135,128,0.1)" stroke="rgba(136,135,128,0.3)" stroke-width="1"/>
+      <text x="510" y="68" text-anchor="middle" style="fill:rgba(255,255,255,0.7);font-size:13px;font-weight:600">World</text>
+      <text x="510" y="86" text-anchor="middle" class="label-sub">Rich, complex, physical</text>
+      <line x1="510" y1="98" x2="510" y2="120" stroke="rgba(255,255,255,0.3)" stroke-width="1" marker-end="url(#arr2)"/>
+      <rect x="453" y="101" width="114" height="16" rx="3" fill="rgba(213,90,48,0.2)" stroke="rgba(213,90,48,0.5)" stroke-width="0.5"/>
+      <text x="510" y="113" text-anchor="middle" style="fill:#f09970;font-size:10px">curated and labeled</text>
+      <rect x="390" y="120" width="240" height="52" rx="8" fill="rgba(136,135,128,0.1)" stroke="rgba(136,135,128,0.3)" stroke-width="1"/>
+      <text x="510" y="142" text-anchor="middle" style="fill:rgba(255,255,255,0.7);font-size:13px;font-weight:600">Designed lens</text>
+      <text x="510" y="160" text-anchor="middle" class="label-sub">Pre-structured dataset</text>
+      <line x1="510" y1="172" x2="510" y2="194" stroke="rgba(255,255,255,0.3)" stroke-width="1" marker-end="url(#arr2)"/>
+      <rect x="390" y="194" width="240" height="52" rx="8" fill="rgba(136,135,128,0.1)" stroke="rgba(136,135,128,0.3)" stroke-width="1"/>
+      <text x="510" y="216" text-anchor="middle" style="fill:rgba(255,255,255,0.7);font-size:13px;font-weight:600">Optimization within lens</text>
+      <text x="510" y="234" text-anchor="middle" class="label-sub">Loss function, gradient descent</text>
+      <line x1="510" y1="246" x2="510" y2="268" stroke="rgba(255,255,255,0.3)" stroke-width="1" marker-end="url(#arr2)"/>
+      <rect x="390" y="268" width="240" height="60" rx="8" fill="rgba(136,135,128,0.15)" stroke="rgba(136,135,128,0.4)" stroke-width="1.2"/>
+      <text x="510" y="293" text-anchor="middle" style="fill:rgba(255,255,255,0.7);font-size:13px;font-weight:600">Behavior is trained in</text>
+      <text x="510" y="313" text-anchor="middle" class="label-sub">From patterns, not pressure</text>
+    </svg>
+    <p class="diagram-caption">The filter step on the right is the crux. The world is intercepted before it reaches the system.</p>
+  </div>
+
+  <h2>A parallel in physics</h2>
+
+  <p>Topological qubits store quantum information in the topological properties of a physical system rather than in the properties of individual particles or atoms, and this makes them theoretically more stable than any other qubit engineered to date. In February 2025, Microsoft unveiled Majorana 1, the world's first Quantum Processing Unit powered by a Topological Core, with quantum information encoded in Majorana Zero Modes, protected by topology, and processed through measurements.</p>
+
+  <p>The principle is structurally analogous to what we see in biological systems: because the electrons don't exist in any one location, their information is protected topologically from any local disturbances. Robustness is not added on top of function. It is intrinsic to the architecture.</p>
+
+  <div class="diagram-block">
+    <svg viewBox="0 0 680 360" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="arr3" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+          <path d="M2 1L8 5L2 9" fill="none" stroke="#D85A30" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </marker>
+      </defs>
+      <text x="165" y="28" text-anchor="middle" class="label-head">Conventional qubit</text>
+      <text x="165" y="46" text-anchor="middle" class="label-sub">Information in one location</text>
+      <circle cx="165" cy="148" r="40" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+      <circle cx="165" cy="148" r="30" fill="rgba(213,90,48,0.2)" stroke="rgba(213,90,48,0.6)" stroke-width="1"/>
+      <text x="165" y="148" text-anchor="middle" dominant-baseline="central" style="fill:#f09970;font-size:16px;font-weight:600">|ψ⟩</text>
+      <line x1="80" y1="96" x2="132" y2="133" stroke="#D85A30" stroke-width="1.5" stroke-dasharray="3 2" opacity="0.7" marker-end="url(#arr3)"/>
+      <text x="68" y="90" text-anchor="middle" class="label-sub" style="fill:#f09970;opacity:0.7">noise</text>
+      <line x1="250" y1="96" x2="198" y2="133" stroke="#D85A30" stroke-width="1.5" stroke-dasharray="3 2" opacity="0.7" marker-end="url(#arr3)"/>
+      <text x="262" y="90" text-anchor="middle" class="label-sub" style="fill:#f09970;opacity:0.7">noise</text>
+      <line x1="96" y1="208" x2="136" y2="172" stroke="#D85A30" stroke-width="1.5" stroke-dasharray="3 2" opacity="0.7" marker-end="url(#arr3)"/>
+      <line x1="234" y1="208" x2="194" y2="172" stroke="#D85A30" stroke-width="1.5" stroke-dasharray="3 2" opacity="0.7" marker-end="url(#arr3)"/>
+      <text x="165" y="222" text-anchor="middle" class="label-sub">Local disturbance corrupts state</text>
+      <rect x="55" y="258" width="220" height="60" rx="8" fill="rgba(213,90,48,0.15)" stroke="rgba(213,90,48,0.5)" stroke-width="1"/>
+      <text x="165" y="283" text-anchor="middle" style="fill:#f09970;font-size:13px;font-weight:600">Fragile</text>
+      <text x="165" y="303" text-anchor="middle" class="label-sub">Requires error correction overhead</text>
+      <line x1="340" y1="20" x2="340" y2="340" stroke="rgba(255,255,255,0.1)" stroke-width="1" stroke-dasharray="4 4"/>
+      <text x="515" y="28" text-anchor="middle" class="label-head">Topological qubit (Majorana)</text>
+      <text x="515" y="46" text-anchor="middle" class="label-sub">Information distributed non-locally</text>
+      <rect x="376" y="138" width="272" height="20" rx="10" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+      <path d="M416 148 C432 118,458 178,480 148 C502 118,530 178,552 148 C574 118,596 178,616 148" fill="none" stroke="#1D9E75" stroke-width="2.2" opacity="0.9"/>
+      <circle cx="396" cy="148" r="13" fill="rgba(29,158,117,0.25)" stroke="#1D9E75" stroke-width="1.5"/>
+      <text x="396" y="148" text-anchor="middle" dominant-baseline="central" style="fill:#5DCAA5;font-size:11px;font-weight:700">M</text>
+      <circle cx="632" cy="148" r="13" fill="rgba(29,158,117,0.25)" stroke="#1D9E75" stroke-width="1.5"/>
+      <text x="632" y="148" text-anchor="middle" dominant-baseline="central" style="fill:#5DCAA5;font-size:11px;font-weight:700">M</text>
+      <text x="396" y="174" text-anchor="middle" class="label-sub">MZM</text>
+      <text x="632" y="174" text-anchor="middle" class="label-sub">MZM</text>
+      <line x1="442" y1="80" x2="452" y2="130" stroke="#D85A30" stroke-width="1" stroke-dasharray="3 2" opacity="0.35" marker-end="url(#arr3)"/>
+      <text x="436" y="74" text-anchor="middle" class="label-sub" style="fill:#f09970;opacity:0.4">noise</text>
+      <line x1="562" y1="80" x2="554" y2="130" stroke="#D85A30" stroke-width="1" stroke-dasharray="3 2" opacity="0.35" marker-end="url(#arr3)"/>
+      <text x="570" y="74" text-anchor="middle" class="label-sub" style="fill:#f09970;opacity:0.4">noise</text>
+      <text x="447" y="154" text-anchor="middle" style="fill:#D85A30;font-size:13px;opacity:0.65">✕</text>
+      <text x="557" y="154" text-anchor="middle" style="fill:#D85A30;font-size:13px;opacity:0.65">✕</text>
+      <text x="515" y="210" text-anchor="middle" class="label-sub">Information spread across space</text>
+      <text x="515" y="226" text-anchor="middle" class="label-sub">No single point to corrupt</text>
+      <rect x="400" y="258" width="230" height="60" rx="8" fill="rgba(29,158,117,0.15)" stroke="rgba(29,158,117,0.5)" stroke-width="1"/>
+      <text x="515" y="283" text-anchor="middle" style="fill:#5DCAA5;font-size:13px;font-weight:600">Intrinsically robust</text>
+      <text x="515" y="303" text-anchor="middle" class="label-sub">Robustness from structure, not addition</text>
+    </svg>
+    <p class="diagram-caption">The braided green line threads through noise that cannot reach it. Microsoft Majorana 1, <em>Nature</em> 2025 · claims remain under peer review</p>
+  </div>
+
+  <p>It should be noted that Microsoft's claims remain contested. Outside researchers have critiqued the evidence for Majorana-based topological protection as ambiguous. The principle is scientifically grounded; the engineering demonstration is still being verified.</p>
+
+  <h2>The question this raises</h2>
+
+  <p>If behavior emerges from structure and constraint, and robustness comes from computing through uncertainty rather than despite it, then the relevant question for AI development is not only how to improve accuracy within existing training paradigms.</p>
+
+  <p>It is whether the conditions under which intelligence is asked to form are the right ones at all.</p>
+
+  <a class="back" href="index.html">← Back to Home</a>
+
+</div>
+</body>
+</html>
